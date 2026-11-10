@@ -1,0 +1,43 @@
+country_code,country_name,fatf_status
+AF,Afghanistan,HIGH_RISK
+AL,Albania,MONITORED
+BB,Barbados,MONITORED
+BF,Burkina Faso,HIGH_RISK
+CM,Cameroon,MONITORED
+CD,Congo (Democratic Republic),MONITORED
+CG,Congo (Republic),MONITORED
+HT,Haiti,HIGH_RISK
+HK,Hong Kong,STANDARD
+IN,India,STANDARD
+IR,Iran,HIGH_RISK
+JM,Jamaica,MONITORED
+JO,Jordan,MONITORED
+KE,Kenya,MONITORED
+KH,Cambodia,MONITORED
+KP,North Korea,HIGH_RISK
+LY,Libya,HIGH_RISK
+LK,Sri Lanka,MONITORED
+ML,Mali,HIGH_RISK
+MM,Myanmar,HIGH_RISK
+MN,Mongolia,MONITORED
+MZ,Mozambique,MONITORED
+NG,Nigeria,MONITORED
+PA,Panama,MONITORED
+PH,Philippines,MONITORED
+PK,Pakistan,MONITORED
+RU,Russia,HIGH_RISK
+SA,Saudi Arabia,STANDARD
+SD,Sudan,HIGH_RISK
+SN,Senegal,MONITORED
+SS,South Sudan,HIGH_RISK
+SY,Syria,HIGH_RISK
+TG,Togo,MONITORED
+TZ,Tanzania,MONITORED
+UA,Ukraine,STANDARD
+VN,Vietnam,MONITORED
+VU,Vanuatu,MONITORED
+YE,Yemen,HIGH_RISK
+ZA,South Africa,MONITORED
+-- Add remaining countries from the latest FATF published lists before running.
+-- Source: https://www.fatf-gafi.org/en/topics/high-risk-and-other-monitored-jurisdictions.html
+-- List date: 2026-10 (update this comment when you refresh)

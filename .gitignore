@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+.env
+rsa_key.p8
+rsa_key.pub
+gleif_leis.txt
+dbt/target/
+dbt/dbt_packages/
+*.egg-info/

@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: dim_client
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [client_id, valid_from]
+    columns:
+      - name: client_key
+        tests: [unique, not_null]
+      - name: risk_rating
+        tests:
+          - accepted_values:
+              values: ['LOW', 'MEDIUM', 'HIGH']
+      - name: kyc_status
+        tests:
+          - accepted_values:
+              values: ['SUBMITTED', 'IN_REVIEW', 'APPROVED', 'REJECTED']
+
+  - name: fact_kyc_event
+    columns:
+      - name: event_id
+        tests: [unique, not_null]
+      - name: client_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_client')
+              field: client_key
+      - name: jurisdiction_key
+        tests:
+          - relationships:
+              to: ref('dim_jurisdiction')
+              field: jurisdiction_key
+
+  - name: dim_legal_entity
+    columns:
+      - name: lei
+        tests: [unique, not_null]
+      - name: entity_key
+        tests: [unique, not_null]
+
+  - name: dim_jurisdiction
+    columns:
+      - name: country_code
+        tests: [unique, not_null]
+      - name: jurisdiction_key
+        tests: [unique, not_null]

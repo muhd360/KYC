@@ -1,0 +1,10 @@
+apache-airflow==2.9.3
+apache-airflow-providers-snowflake
+apache-airflow-providers-postgres
+dbt-snowflake
+snowflake-connector-python
+psycopg2-binary
+pandas
+pyarrow
+faker
+requests

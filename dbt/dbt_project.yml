@@ -1,0 +1,25 @@
+name: kyc
+version: "1.0.0"
+config-version: 2
+profile: kyc
+
+model-paths:  ["models"]
+snapshot-paths: ["snapshots"]
+seed-paths:   ["seeds"]
+test-paths:   ["tests"]
+analysis-paths: ["analyses"]
+
+target-path:  "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  kyc:
+    staging:
+      +schema: staging
+      +materialized: view
+    intermediate:
+      +schema: staging
+      +materialized: ephemeral
+    marts:
+      +schema: marts
+      +materialized: table

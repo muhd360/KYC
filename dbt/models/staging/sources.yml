@@ -1,0 +1,50 @@
+version: 2
+
+sources:
+  - name: raw
+    database: kyc
+    schema: raw
+    tables:
+      - name: gleif_entities
+        loaded_at_field: loaded_at
+        freshness:
+          warn_after:  { count: 26, period: hour }
+          error_after: { count: 50, period: hour }
+      - name: gleif_relationships
+        loaded_at_field: loaded_at
+        freshness:
+          warn_after:  { count: 26, period: hour }
+          error_after: { count: 50, period: hour }
+      - name: clients
+        loaded_at_field: loaded_at
+        freshness:
+          warn_after:  { count: 26, period: hour }
+          error_after: { count: 50, period: hour }
+      - name: contact_persons
+        loaded_at_field: loaded_at
+        freshness:
+          warn_after:  { count: 26, period: hour }
+          error_after: { count: 50, period: hour }
+      - name: kyc_events
+        loaded_at_field: loaded_at
+        freshness:
+          warn_after:  { count: 26, period: hour }
+          error_after: { count: 50, period: hour }
+      - name: client_documents
+        loaded_at_field: loaded_at
+        freshness:
+          warn_after:  { count: 26, period: hour }
+          error_after: { count: 50, period: hour }
+      - name: screening_results
+        loaded_at_field: loaded_at
+        freshness:
+          warn_after:  { count: 26, period: hour }
+          error_after: { count: 50, period: hour }
+
+  - name: control
+    database: kyc
+    schema: control
+    tables:
+      - name: source_counts
+      - name: watermarks
+      - name: extract_log

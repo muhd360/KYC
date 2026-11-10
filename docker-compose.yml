@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  onboarding-db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER:     kyc
+      POSTGRES_PASSWORD: kyc
+      POSTGRES_DB:       onboarding
+    ports:
+      - "5433:5432"      # 5432 is used by Airflow's own metadata database
+    volumes:
+      - ./postgres/init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kyc -d onboarding"]
+      interval: 5s
+      retries: 5
